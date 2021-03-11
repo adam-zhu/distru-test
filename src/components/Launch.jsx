@@ -19,6 +19,10 @@ const Launch = ({ launch, rocket, onClick }) => {
 };
 
 const RocketDetail = ({ rocket }) => {
+  if (rocket === 'loading') {
+    return <progress />;
+  }
+
   const { rocket_id, cost_per_launch, description } = rocket;
   const costPerLaunch = Math.round(cost_per_launch / 10000) * 100;
 

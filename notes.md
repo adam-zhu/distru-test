@@ -1,3 +1,4 @@
+- bumped prettier to get it working w my VSCode, bumped node-sass bc webpack was complaining
 - refactored Launches.jsx to functional render components + hooks
 - renamed LaunchService.js "api.get()" -> "api.list()" because it fetches list data
 - put rocket data onto Redux store because global state ought to be used to store "database" data
