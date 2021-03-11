@@ -1,0 +1,13 @@
+- refactored Launches.jsx to functional render components + hooks
+- renamed LaunchService.js "api.get()" -> "api.list()" because it fetches list data
+- put rocket data onto Redux store because global state ought to be used to store "database" data
+- put launch expanded state into local component state because it felt more like a "UI setting" level piece of state than anything that comes from/would be persisted back to a database or would globally affect the application
+  - imho this is a good way to bifurcate what state belongs in a global store
+- inlined the RocketDetail component into Launches.jsx because it seemed the most direct
+  - have found that factoring code in anticipation of future product requirements is best with a solid idea of those requirements -- elected to forgo that in favor of delivering what was requested in the most easily maneuverable manner
+- just copied the patterns
+  - I prefer to copy existing architecture in order to bring the least disruption to a codebase
+    - if I were greenfielding it, I would probably put a reducer's actions in the same file next to the reducer function, and I would probably bring in `redux-thunk` to handle async side effects (I find that it nicely consolidates side effect code).
+    - also would exchange `react-redux`'s `connect` for `useReducer, useState` hooks
+- went for inlined styles for reasons of minimizing disruption (honestly wasn't sure the best way to write styles in this codebase, I'd ask someone from the team in the case of production work)
+  - if I were greenfielding it, I'd probably use sass modules.
